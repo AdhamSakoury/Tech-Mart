@@ -1434,8 +1434,14 @@
       "rating": 4.9,
       "reviewCount": 876,
       "brand": "Nikon",
-      "images": ["../assets/images/products/nikon-d850.png"],
-      "thumbnail": "../assets/images/products/nikon-d850.png",
+      "images": [
+        "../assets/images/products/Nikon D850/Nikon D850.jpg",
+        "../assets/images/products/Nikon D850/Nikon D850-1.jpg",
+        "../assets/images/products/Nikon D850/Nikon D850-2.jpg",
+        "../assets/images/products/Nikon D850/Nikon D850-3.jpg",
+        "../assets/images/products/Nikon D850/Nikon D850-4.jpg"
+      ],
+      "thumbnail": "../assets/images/products/Nikon D850/Nikon D850.jpg",
       "description": "Extreme resolution meets extreme speed. A pro-grade full-frame DSLR powerhouse.",
       "specifications": {
         "Sensor": "45.7MP Full-Frame CMOS",
@@ -1470,8 +1476,14 @@
       "rating": 4.5,
       "reviewCount": 3421,
       "brand": "Canon",
-      "images": ["../assets/images/products/canon-t7.png"],
-      "thumbnail": "../assets/images/products/canon-t7.png",
+      "images": [
+        "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7.jpg",
+        "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7-1.jpg",
+        "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7-2.jpg",
+        "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7-3.jpg",
+        "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7-4.jpg"
+      ],
+      "thumbnail": "../assets/images/products/Canon EOS Rebel T7/Canon EOS Rebel T7.jpg",
       "description": "Perfect for beginners. Sleek DSLR with a 24.1MP sensor and built-in Wi-Fi.",
       "specifications": {
         "Sensor": "24.1MP APS-C CMOS",
@@ -1506,8 +1518,13 @@
       "rating": 4.8,
       "reviewCount": 432,
       "brand": "Nikon",
-      "images": ["../assets/images/products/nikon-d780.png"],
-      "thumbnail": "../assets/images/products/nikon-d780.png",
+      "images": [
+        "../assets/images/products/Nikon D780/Nikon D780.jpg",
+        "../assets/images/products/Nikon D780/Nikon D780-1.jpg",
+        "../assets/images/products/Nikon D780/Nikon D780-2.jpg",
+        "../assets/images/products/Nikon D780/Nikon D780-3.jpg"
+      ],
+      "thumbnail": "../assets/images/products/Nikon D780/Nikon D780.jpg",
       "description": "Versatile full-frame DSLR with advanced movie features and low-light performance.",
       "specifications": {
         "Sensor": "24.5MP Full-Frame CMOS",
