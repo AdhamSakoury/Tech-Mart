@@ -46,3 +46,22 @@
   --transition-normal: 0.3s ease;
 }
 
+/* Regular / Variable weight */
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900; /* supports all weights */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

@@ -14,11 +14,11 @@
       "reviewCount": 892,
       "brand": "Apple",
       "images": [
-        "../assets/images/products/iphone-17-pm.png",
-        "../assets/images/products/iphone-17-pm-2.png",
-        "../assets/images/products/iphone-17-pm-3.png"
+        "../assets/images/products/iPhone 17 Pro Max/iphone-17-pm.png",
+        "../assets/images/products/iPhone 17 Pro Max/iphone-17-pm-2.png",
+        "../assets/images/products/iPhone 17 Pro Max/iphone-17-pm-3.png"
       ],
-      "thumbnail": "../assets/images/products/iphone-17-pm.png",
+      "thumbnail": "../assets/images/products/iPhone 17 Pro Max/iphone-17-pm.png",
       "description": "The ultimate flagship with a 6.9-inch display, A19 Pro chip, and the longest 8x optical zoom ever on iPhone.",
       "specifications": {
         "Display": "6.9-inch Super Retina XDR",
@@ -53,10 +53,12 @@
       "reviewCount": 754,
       "brand": "Apple",
       "images": [
-        "../assets/images/products/iphone-17-pro.png",
-        "../assets/images/products/iphone-17-pro-2.png"
+        "../assets/images/products/iPhone 17 Pro/iphone-17-pm.webp",
+        "../assets/images/products/iPhone 17 Pro/iphone-17-pm-2.png",
+        "../assets/images/products/iPhone 17 Pro/iphone-17-pm-3.webp",
+        "../assets/images/products/iPhone 17 Pro/iphone-17-pro-4.jpg"
       ],
-      "thumbnail": "../assets/images/products/iphone-17-pro.png",
+      "thumbnail": "../assets/images/products/iPhone 17 Pro/iphone-17-pro-4.jpg",
       "description": "New aluminum unibody design with vapor chamber cooling and the powerful 48MP Fusion camera system.",
       "specifications": {
         "Display": "6.3-inch Super Retina XDR",
@@ -88,8 +90,13 @@
       "rating": 4.7,
       "reviewCount": 1245,
       "brand": "Apple",
-      "images": ["../assets/images/products/iphone-15.png"],
-      "thumbnail": "../assets/images/products/iphone-15.png",
+      "images": [
+        "../assets/images/products/iPhone 15/iPhone 15.jpg",
+        "../assets/images/products/iPhone 15/iPhone 15-1.jpg",
+        "../assets/images/products/iPhone 15/iPhone 15-2.jpg",
+        "../assets/images/products/iPhone 15/iPhone 15-3.jpg"
+      ],
+      "thumbnail": "../assets/images/products/iPhone 15/iPhone 15.jpg",
       "description": "The reliable classic featuring Dynamic Island, a 48MP Main camera, and universal USB-C charging.",
       "specifications": {
         "Display": "6.1-inch Super Retina XDR",
@@ -121,8 +128,12 @@
       "rating": 4.6,
       "reviewCount": 892,
       "brand": "Apple",
-      "images": ["../assets/images/products/iphone-14-plus.png"],
-      "thumbnail": "../assets/images/products/iphone-14-plus.png",
+      "images": [
+        "../assets/images/products/iPhone 14 Plus/iPhone 14 Plus.jpg",
+        "../assets/images/products/iPhone 14 Plus/iPhone 14 Plus-1.jpg",
+        "../assets/images/products/iPhone 14 Plus/iPhone 14 Plus-2.jpg"
+      ],
+      "thumbnail": "../assets/images/products/iPhone 14 Plus/iPhone 14 Plus.jpg",
       "description": "Big screen and big battery life for those who want a larger display without the Pro price tag.",
       "specifications": {
         "Display": "6.7-inch Super Retina XDR",
@@ -154,8 +165,13 @@
       "rating": 4.8,
       "reviewCount": 567,
       "brand": "Apple",
-      "images": ["../assets/images/products/iphone-13-mini.png"],
-      "thumbnail": "../assets/images/products/iphone-13-mini.png",
+      "images": [
+        "../assets/images/products/iPhone 13 Mini/iPhone 13 Mini.jpg",
+        "../assets/images/products/iPhone 13 Mini/iPhone 13 Mini-1.jpg",
+        "../assets/images/products/iPhone 13 Mini/iPhone 13 Mini-2.jpg",
+        "../assets/images/products/iPhone 13 Mini/iPhone 13 Mini-3.jpg"
+      ],
+      "thumbnail": "../assets/images/products/iPhone 13 Mini/iPhone 13 Mini.jpg",
       "description": "The final compact powerhouse for fans of one-handed use, now at a great legacy value.",
       "specifications": {
         "Display": "5.4-inch Super Retina XDR",
@@ -187,8 +203,12 @@
       "rating": 4.4,
       "reviewCount": 1034,
       "brand": "Apple",
-      "images": ["../assets/images/products/iphone-se.png"],
-      "thumbnail": "../assets/images/products/iphone-se.png",
+      "images": [
+        "../assets/images/products/iPhone SE/iPhone SE.jpg",
+        "../assets/images/products/iPhone SE/iPhone SE-1.webp",
+        "../assets/images/products/iPhone SE/iPhone SE-2.jpg"
+      ],
+      "thumbnail": "../assets/images/products/iPhone SE/iPhone SE.jpg",
       "description": "The most affordable entry into iOS with the familiar home button and fast A15 Bionic performance.",
       "specifications": {
         "Display": "4.7-inch Retina HD",
@@ -220,8 +240,11 @@
       "rating": 4.5,
       "reviewCount": 2341,
       "brand": "Apple",
-      "images": ["../assets/images/products/magsafe-case.png"],
-      "thumbnail": "../assets/images/products/magsafe-case.png",
+      "images": [
+        "../assets/images/products/MagSafe Silicone Case/MagSafe Silicone Case.webp",
+        "../assets/images/products/MagSafe Silicone Case/MagSafe Silicone Case-1.webp"
+      ],
+      "thumbnail": "../assets/images/products/MagSafe Silicone Case/MagSafe Silicone Case.webp",
       "description": "Silky, soft-touch finish with built-in magnets for fast wireless charging.",
       "specifications": {
         "Material": "Silicone",

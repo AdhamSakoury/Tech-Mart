@@ -1,7 +1,7 @@
-// js/main.js
-import { loadPartial } from "./core/utils";
+// load header and footer partials
+import { loadPartial } from "./core/utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPartial("header", "../partials/header.html");
+  loadPartial("header", "../pages/partials/header.html");
   //   loadPartial("footer", "../partials/footer.html");
 });
