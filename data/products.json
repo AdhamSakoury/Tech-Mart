@@ -56,7 +56,7 @@
         "../assets/images/products/iPhone 17 Pro/iphone-17-pm.webp",
         "../assets/images/products/iPhone 17 Pro/iphone-17-pm-2.jpg",
         "../assets/images/products/iPhone 17 Pro/iphone-17-pm-3.webp",
-        "../assets/images/products/iPhone 17 Pro/iphone-17-pro-4.jpg"
+        "../assets/images/products/iPhone 17 Pro/iphone-17-pm-4.jpg"
       ],
       "thumbnail": "../assets/images/products/iPhone 17 Pro/iphone-17-pm.webp",
       "description": "New aluminum unibody design with vapor chamber cooling and the powerful 48MP Fusion camera system.",
@@ -384,9 +384,9 @@
       "reviewCount": 1542,
       "brand": "Samsung",
       "images": [
-        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra.webp",
-        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra-1.jpg",
-        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra-2.webp"
+        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra.jpg",
+        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra-1.webp",
+        "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra.jpg"
       ],
       "thumbnail": "../assets/images/products/Samsung Galaxy S24 Ultra/Samsung Galaxy S24 Ultra.webp",
       "description": "The compact flagship with a 50MP camera and pro-grade photo editing AI.",
