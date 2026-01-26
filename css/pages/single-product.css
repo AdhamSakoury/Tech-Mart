@@ -1,0 +1,161 @@
+body
+{
+    background-color: var(--color-bg-gray);
+}
+.single-product__container
+{
+    background-color: var(--color-bg-gray);
+}
+
+.single-product__path
+{
+    background-color: var(--color-bg);
+    padding: 1vh 0 1vh 1vw;
+    margin: 2vh 1vw;
+    border-radius: 10px;;
+}
+
+.single-product__path a:hover
+{
+    text-decoration: underline;
+}
+
+.single-product__main
+{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 5vw 0;
+    gap: 10px;
+    justify-content:center;
+    width: 85vw;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.single-product__gallery
+{
+    width: 30vw;
+}
+.single-product__gallery-tag
+{
+    padding: 0.5vw;
+    width: 1vw;
+    margin: 0 2vw;
+    color:white;
+    background-color: black;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.single-product__gallery-image--main-container
+{
+    overflow: hidden;
+}
+.single-product__gallery-image--main
+{
+    width: 30vw;
+    /* object-fit: cover; */
+    transition: transform 0.5s ease;
+}
+
+.single-product__gallery-image--main-container:hover 
+.single-product__gallery-image--main
+{
+    transform: scale(1.2);
+    cursor: zoom-in;
+}
+
+.single-product__gallery-image--sub
+{
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.single-product__gallery-image--sub:hover 
+{
+    transform: scale(1.5);
+    cursor: zoom-in;
+}
+
+.single-product__gallery-image--sub-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    width: 10vw;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.single-product__info
+{
+    width: 30vw;
+    padding: 0 2vw;
+}
+
+.single-product__purchase
+{
+    width: 20vw;
+    padding: 0 2vw;
+    background-color: var(--color-bg-gray);
+    border-radius: 15px;
+    color: #666666;
+}
+
+.single-product__purchase h4
+{
+    color: #666666;
+    margin: 2em 0;
+}
+
+.single-product__quant
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    align-items: center;
+}
+
+.single-product--btn
+{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1vw;
+    border-radius: 15px;
+    font-size: 2vw;
+}
+
+.single-product__quant-btn
+{
+    font-size: 2vw;
+}
+
+.single-product__add
+{
+    padding: 1.5em;
+}
+.single-product__add-btn
+{
+    width: 100%;
+    color: white;
+    background-color: #1ABA1A;
+    font-size: 1em;
+}
+
+.single-product__guarantee
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 4px;
+}
+
+.single-product__guarantee-payment
+{
+    height: 20px;
+}
