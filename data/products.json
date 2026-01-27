@@ -1,5 +1,4 @@
-{
-  "products": [
+[
     {
       "id": "prod-001",
       "categoryId": "cat-002",
@@ -2645,4 +2644,3 @@
       "createdAt": "2023-03-18T09:00:00Z"
     }
   ]
-}

@@ -1,5 +1,4 @@
-{
-  "subcategories": [
+ [
     {
       "id": "subcat-001",
       "categoryId": "cat-001",
@@ -172,4 +171,3 @@
       "image": "../assets/images/subcategories/soundbars.webp"
     }
   ]
-}
