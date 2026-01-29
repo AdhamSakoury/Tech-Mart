@@ -1,5 +1,4 @@
 import * as productService from "../services/productService.js";
-
 export const initHeader = async () => {
   const subcategoriesSelector = document.querySelector(".category-select");
   if (!subcategoriesSelector) return;

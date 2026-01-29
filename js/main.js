@@ -1,16 +1,27 @@
 // load header and footer partials
 import { loadPartial } from "./core/utils.js";
-import {
-  initHeader
-} from "./components/header.js";
-
+import { initHeader } from "./components/header.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  loadPartial("header", "../pages/partials/header.html");
-  loadPartial("footer", "../pages/partials/footer.html");
-  await loadPageModule(document.body.dataset.page);
-  console.log(document.body.dataset.page);
-  initHeader();
+  try {
+    //  Wait for partials to load BEFORE initializing
+    await Promise.all([
+      loadPartial("header", "../pages/partials/header.html"),
+      loadPartial("footer", "../pages/partials/footer.html"),
+    ]);
+
+    console.log("✓ Partials loaded");
+
+    // Now initialize header (DOM elements now exist)
+    await initHeader();
+    console.log("✓ Header initialized");
+
+    // Then load page-specific code
+    await loadPageModule(document.body.dataset.page);
+    console.log("✓ Page module loaded:", document.body.dataset.page);
+  } catch (error) {
+    console.error("❌ Initialization failed:", error);
+  }
 });
 
 // Dynamically load page-specific module
@@ -19,7 +30,7 @@ const loadPageModule = async (pageName) => {
     switch (pageName) {
       case "index":
         const page = await import("./pages/index.js");
-        await page.init();
+        if (page.init) await page.init();
         break;
 
       case "products":
@@ -35,12 +46,12 @@ const loadPageModule = async (pageName) => {
 
       case "cart":
         const { initCartPage } = await import("./pages/cart.js");
-        initCartPage();
+        await initCartPage();
         break;
 
       case "checkout":
         const { initCheckoutPage } = await import("./pages/checkout.js");
-        initCheckoutPage();
+        await initCheckoutPage();
         break;
 
       default:
