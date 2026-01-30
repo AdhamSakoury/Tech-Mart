@@ -122,7 +122,7 @@
 .logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.2;
 }
 .logo-text span {
   color: var(--color-text-muted);
@@ -252,6 +252,12 @@
   font-weight: 900;  
 }
 
+.disabled {
+  opacity: 0.5;          
+  pointer-events: none;  
+  cursor: not-allowed;
+}
+
 
 .cart-section {
   display: flex;
@@ -288,7 +294,7 @@
 .cart-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .user-account:hover, .cart-text:hover {
@@ -301,7 +307,7 @@
   color: var(--color-text-muted);
 }
 
-.value {
+.value , .cart-amount {
   font-size: 12px;
   font-weight: bold;
 }

@@ -6,7 +6,8 @@ export const APP_CONFIG = {
 
   // Local storage keys to avoid conflicts
   storageKeys: {
-    cart: "techmart_cart",
+    // cart: "techmart_cart",
+    cart: "cart",
     user: "techmart_user",
     orders: "techmart_orders",
     wishlist: "techmart_wishlist",
