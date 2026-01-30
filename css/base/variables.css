@@ -9,11 +9,19 @@
   --color-bg: #ffffff;
   --color-bg-muted: #f5f6f8;
   --color-bg-soft: #f0f1f3;
-
+  --color-bg-gray: #E2E4EB;
   /* Text Colors */
   --color-text: #222222;
+  --color-text-strong: #000000;
   --color-text-muted: #777777;
   --color-text-light: #aaaaaa;
+  /*Button*/
+  --color-card-btn: var(--color-primary);
+  --color-card-btn-hover: var(--color-primary-hover);
+  --color-bucket-btn: #aaaaaa;
+  --color-bucket-btn-hover: #2c3ec5;
+  --color-buy-now-btn: #FF6200;
+  --color-buy-now-btn-hover: #D14900;
 
   /* Borders */
   --color-border: #e0e0e0;

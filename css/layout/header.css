@@ -4,13 +4,14 @@
   width: 100%;
   background-color: var(--color-bg);
 }
-body {
+
+/* body {
   background-color: var(--color-bg);
   color: var(--color-text);
   transition:
     background-color 0.3s,
-    color 0.3s; /* Smooth transition! */
-}
+    color 0.3s; 
+} */
 
 /* --- 1. Top Bar --- */
 .header__top-bar {
@@ -28,14 +29,16 @@ body {
   margin-bottom: 0;
 }
 
-.nav-item:hover select {
+
+/* .nav-item:hover select {
   color: var(--color-primary);
   cursor: pointer;
 }
 .header__nav-link.contact-link:hover {
   color: var(--color-primary);
   cursor: pointer;
-}
+} */
+
 
 /* Override the default margin from typography.css */
 
@@ -125,25 +128,39 @@ body {
   color: var(--color-text-muted);
 }
 
-/* Updated Nav Container */
-.header__nav-container {
+/* new nav bar*/
+
+.header__nav ul{
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
-}
+  justify-content: center;
 
-/* Styling the Select to look like a Link */
-.nav-dropdown {
-  border: none;
-  background: transparent;
-  font-family: inherit;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: var(--font-size-sm);
-  color: var(--color-text);
-  cursor: pointer;
-  outline: none;
-  padding: 0;
+}
+.header__nav ul li{
+  list-style: none;
+  padding: 0 40px;
+  position: relative;
+}
+.header__nav ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+.header__nav ul li a:hover,
+.header__nav ul li a.active {
+  color: var(--color-primary);
+}
+.header__nav ul li a.active::after,
+.header__nav ul li a:hover::after{
+  content: "";
+  width: 30%; 
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: -4px;
+  left: 30px;
 }
 
 /* Contact Link styling */
@@ -154,6 +171,40 @@ body {
   text-decoration: none;
   color: var(--color-text);
 }
+
+/* Updated Nav Container */
+
+
+/* .header__nav-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+} */
+
+/* Styling the Select to look like a Link */
+
+/* .nav-dropdown {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+} */
+
+/* Contact Link styling */
+
+/* .header__nav-link.contact-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  color: var(--color-text);
+} */
 
 /* Actions & Cart */
 .header__actions {
@@ -276,6 +327,7 @@ body {
 
 /* --- Search & Category Wrapper --- */
 .search-category-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: white;
@@ -348,6 +400,98 @@ body {
   font-size: 10px; /* Adjust size to fit your circle */
   padding: 0;
 }
+
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top:  50px;
+  left: 0;
+  width: 100%;
+  max-height: 400px;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 12px;
+}
+
+.section h4 {
+  font-size: 14px;
+  color: #000000;
+}
+
+
+/* Suggestions */
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  color: #333;
+    transition: all var(--transition-normal);
+
+}
+
+.suggestions li:hover {
+  background: var(--color-bg-soft);
+  /* color: var(--color-primary); */
+    transform: translateY(-4px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Search Results */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-image {
+  width: 50px;
+  height: 50px;
+  object-fit: fill;
+  border-radius:var(--radius-md);
+}
+
+.result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-name {
+  font-size: var( --font-size-sm);
+  font-weight: bold;
+  margin: 0;
+}
+
+.result-brand {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+.result-price {
+  font-size: var( --font-size-sm);
+  color: #000;
+  margin: 0;
+  font-weight: bold;
+}
+
+
 
 /* Hide the "Dark Mode" text if the circle is too small */
 @media (max-width: 1200px) {
