@@ -80,6 +80,8 @@ export async function updateCartBadge() {
   if (itemCount > 0) {
     cartbadge.classList.remove("hidden");
     cartwrapper.classList.remove("disabled");
+    cartbadge.classList.add("bump");
+    setTimeout(() => cartbadge.classList.remove("bump"), 300);
 
     //Load cart badge
     cartbadge.textContent = itemCount;
