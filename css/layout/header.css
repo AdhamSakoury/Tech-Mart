@@ -276,6 +276,7 @@ body {
 
 /* --- Search & Category Wrapper --- */
 .search-category-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: white;
@@ -348,6 +349,98 @@ body {
   font-size: 10px; /* Adjust size to fit your circle */
   padding: 0;
 }
+
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top:  50px;
+  left: 0;
+  width: 100%;
+  max-height: 400px;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 12px;
+}
+
+.section h4 {
+  font-size: 14px;
+  color: #000000;
+}
+
+
+/* Suggestions */
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  color: #333;
+    transition: all var(--transition-normal);
+
+}
+
+.suggestions li:hover {
+  background: var(--color-bg-soft);
+  /* color: var(--color-primary); */
+    transform: translateY(-4px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Search Results */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.result-image {
+  width: 50px;
+  height: 50px;
+  object-fit: fill;
+  border-radius:var(--radius-md);
+}
+
+.result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-name {
+  font-size: var( --font-size-sm);
+  font-weight: bold;
+  margin: 0;
+}
+
+.result-brand {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+.result-price {
+  font-size: var( --font-size-sm);
+  color: #000;
+  margin: 0;
+  font-weight: bold;
+}
+
+
 
 /* Hide the "Dark Mode" text if the circle is too small */
 @media (max-width: 1200px) {
