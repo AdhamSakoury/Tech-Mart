@@ -990,11 +990,13 @@
   background-color: var(--color-text);
   padding: var(--space-sm) 25px;
   border-radius: var(--radius-lg);
-  transition: background-color var(--transition-normal);
+  transition: 0.3s;
 }
 
 .banner-content a:hover {
   background-color: #2a2a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .categories {
