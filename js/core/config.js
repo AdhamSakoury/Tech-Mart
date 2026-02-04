@@ -8,9 +8,10 @@ export const APP_CONFIG = {
   storageKeys: {
     // cart: "techmart_cart",
     cart: "cart",
+    buyNow: "buyNow",
     user: "techmart_user",
     session: "current_user",
-    orders: "techmart_orders",
+    orders: "orders",
     wishlist: "techmart_wishlist",
   },
 
