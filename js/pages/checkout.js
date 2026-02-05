@@ -18,6 +18,10 @@ const successModal = document.getElementById("successModal");
 const promoInput = document.getElementById("promoCode");
 const applyPromoBtn = document.querySelector(".btn-apply-promo");
 
+// BuyNow value
+const urlParams = new URLSearchParams(window.location.search);
+const isBuyNow = urlParams.get("buyNow") === "true";
+
 // ===== STATE =====
 let cartItems = [];
 let orderSummary = {
@@ -33,9 +37,6 @@ document.addEventListener("DOMContentLoaded", initCheckout);
 window.addEventListener("beforeunload", () => {});
 
 async function initCheckout() {
-  // Check if this is a "Buy Now" flow
-  const urlParams = new URLSearchParams(window.location.search);
-  const isBuyNow = urlParams.get("buyNow") === "true";
 
   if (isBuyNow) {
     loadBuyNow();
@@ -92,8 +93,6 @@ function loadBuyNow() {
       return;
     } else {
       renderCartItems();
-      // Clean up buyNow data
-      localStorage.removeItem("buyNow");
     }
   } catch (error) {
     console.error("Error loading buy now data:", error);
@@ -236,7 +235,12 @@ async function handleCheckoutSubmit(e) {
     storage.set("orders", orders);
 
     // Clear cart
-    cartService.clearCart();
+    if(!isBuyNow){
+      // Clean up buyNow data
+      localStorage.removeItem("buyNow");
+    } else {
+      cartService.clearCart();
+    }
     // Clear stored promo after successful order
     try {
       storage.remove("promo");
@@ -255,7 +259,7 @@ async function handleCheckoutSubmit(e) {
   } catch (error) {
     console.error("Checkout error:", error);
     hideLoadingModal();
-    showNotification("An error occurred. Please try again.", "error");
+    showNotification("An error occurred. Please try again.", "error");6
   }
 }
 
