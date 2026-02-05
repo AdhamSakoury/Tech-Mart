@@ -235,7 +235,7 @@ async function handleCheckoutSubmit(e) {
     storage.set("orders", orders);
 
     // Clear cart
-    if(!isBuyNow){
+    if(isBuyNow){
       // Clean up buyNow data
       localStorage.removeItem("buyNow");
     } else {
