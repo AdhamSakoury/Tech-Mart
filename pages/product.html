@@ -1,58 +1,5 @@
 <!doctype html>
 <html lang="en">
-<<<<<<< HEAD
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Tech-mart" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <title>Products - Tech-Mart</title>
-        <link
-            rel="icon"
-            href="../assets/images/logo/logo.svg"
-            type="image/x-icon"
-        />
-        <script src="../js/theme-init.js"></script>
-        <link rel="stylesheet" href="../css/main.css" />
-        <link rel="stylesheet" href="../css/pages/product.css">
-    </head>
-    <body>
-        <div id="header"></div>
-        <main class="product__main">
-            <nav class="product__path">
-                <a href="../index.html" class="product__path-link--home">Home</a>
-                <span class="product__path-separator"> / </span><a class="product__path-link--shop" href="">Shop</a>
-                <span class="product__path-separator"> / </span><a href="" class="product__path-link--category">Products</a>
-            </nav>
-            <div class="page">
-                <header class="product__header">
-                    <h1 class="product__title">TOP CELLPHONES & TABLETS</h1>
-                </header>
-                <section class="banners">
-                    <div class="banner">
-                        <img
-                            src="/assets/videos/Apple.gif"
-                            alt="banner"
-                            class="banner-image"
-                        />
-                    </div>
-                    <div class="banner second-banner">
-                        <img
-                            src="/assets/images/banners/main-top-cellphone/product-main-cellphone.svg"
-                            alt="banner"
-                            class="banner-image"
-                        />
-                        <div class="banner-content">
-                            <div class="banner-content__text">
-                                <h2>Redmi Note 12<br />Pro+ 5G</h2>
-                                <p>Rise to the challenge</p>
-                            </div>
-                            <a href="#" class="shop-btn">Shop Now</a>
-                        </div>
-                    </div>
-                </section>
-=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,36 +12,37 @@
       href="../assets/images/logo/logo.svg"
       type="image/x-icon"
     />
+    <script src="../js/theme-init.js"></script>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/pages/product.css" />
   </head>
   <body data-page="product">
     <div id="header"></div>
     <main class="product__main">
-      <nav class="product__path">
+      <!-- <nav class="product__path">
         <a href="../index.html" class="product__path-link--home">Home</a>
         <span class="product__path-separator"> / </span
         ><a class="product__path-link--shop" href="">Shop</a>
         <span class="product__path-separator"> / </span
         ><a href="" class="product__path-link--category">Products</a>
-      </nav>
+      </nav> -->
       <div class="page">
         <header class="product__header">
-          <h1 class="product__title">TOP CELLPHONES & TABLETS</h1>
+          <h1 class="product__title page-title"></h1>
         </header>
         <section class="banners">
           <div class="banner">
-            <img
+            <img 
               src="/assets/videos/Apple.gif"
               alt="banner"
-              class="banner-image"
+              class="banner-image page-video"
             />
           </div>
           <div class="banner second-banner">
             <img
               src="/assets/images/banners/main-top-cellphone/product-main-cellphone.svg"
               alt="banner"
-              class="banner-image"
+              class="banner-image page-image"
             />
             <div class="banner-content">
               <div class="banner-content__text">
@@ -102,7 +50,6 @@
                 <p>Rise to the challenge</p>
               </div>
               <a href="#" class="shop-btn">Shop Now</a>
->>>>>>> 9903500205e5f52d6c5bed2cecea93e0370e75f3
             </div>
           </div>
         </section>
@@ -231,7 +178,7 @@
         <div class="best-seller__categories">
           <section class="product__dashboard-categories">
             <aside class="product__dashboard-sidebar">
-              <h3>Categories</h3>
+              <h3 class="categories__title">Categories</h3>
               <div class="categories-links"></div>
             </aside>
           </section>
@@ -263,15 +210,7 @@
               <div class="shop-sidebar__block shop-sidebar__block--brands">
                 <h4 class="shop-sidebar__block-title">By Brands</h4>
                 <ul class="shop-sidebar__brands">
-                  <li class="shop-sidebar__brand">
-                    <label class="shop-sidebar__brand-label">
-                      <input type="checkbox" class="shop-sidebar__checkbox" />
-                      <span
-                        class="shop-sidebar__brand-logo shop-sidebar__brand-logo--envato"
-                      ></span>
-                      <span class="shop-sidebar__brand-count">(14)</span>
-                    </label>
-                  </li>
+                  <!-- Add brands -->
                 </ul>
               </div>
               <div class="shop-sidebar__block shop-sidebar__block--price">
@@ -315,7 +254,7 @@
               <div class="shop-sidebar__block shop-sidebar__block--discount">
                 <h4 class="shop-sidebar__block-title">By Discount</h4>
                 <div class="shop-sidebar__block shop-sidebar__block--list">
-custom-select__trigger
+                  custom-select__trigger
                 </div>
               </div>
 
@@ -408,7 +347,7 @@ custom-select__trigger
                   </label>
                 </div>
               </div> -->
-              
+
               <!-- <div class="shop-sidebar__block shop-sidebar__block--condition">
                 <h4 class="shop-sidebar__block-title">By Conditions</h4>
                 <div class="shop-sidebar__condition-list">
@@ -462,15 +401,10 @@ custom-select__trigger
                 </div>
               </div>
             </div> -->
-            <div class="products__grid">
+            <div class="products__grid" id="productsgrid">
               <!-- Add Products -->
             </div>
-            <div class="products__pagination">
-              <button class="products__page products__page--active">1</button>
-              <button class="products__page">2</button>
-              <button class="products__page">3</button>
-              <button class="products__page">Next</button>
-            </div>
+            <div class="products__pagination"></div>
           </section>
         </section>
       </div>

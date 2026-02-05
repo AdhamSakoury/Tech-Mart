@@ -226,9 +226,10 @@ body {
     transition: background-color 0.3s ease-in-out;
     display: none;
 }
-.single-product__basket-btn.active:hover
-{
-    background-color: var(--color-bucket-btn-hover);
+
+.single-product__basket-btn.active:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-text-white);
 }
 
 .single-product__buy-now-btn {
@@ -441,9 +442,9 @@ body {
     height: 50%;
 }
 
-.single-product__freq-aside img:hover{
-    transform: scale(1.02) translateY(-3px);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+.single-product__freq-aside img:hover {
+    transform: scale(1.01) translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 
