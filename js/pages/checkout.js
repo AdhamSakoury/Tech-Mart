@@ -13,10 +13,12 @@ const subtotalEl = document.getElementById("subtotal");
 const shippingEl = document.getElementById("shipping");
 const taxEl = document.getElementById("tax");
 const totalEl = document.getElementById("total");
+const saveEl = document.getElementById("save");
 const loadingModal = document.getElementById("loadingModal");
 const successModal = document.getElementById("successModal");
 const promoInput = document.getElementById("promoCode");
 const applyPromoBtn = document.querySelector(".btn-apply-promo");
+const clearPromoBtnCheckout = document.getElementById("clearPromoBtnCheckout");
 
 // BuyNow value
 const urlParams = new URLSearchParams(window.location.search);
@@ -67,6 +69,12 @@ async function initCheckout() {
           promoInput.disabled = true;
         }
         updateOrderSummary();
+        try {
+          if (saveEl)
+            saveEl.textContent = formatPrice(orderSummary.discount || 0);
+          if (clearPromoBtnCheckout)
+            clearPromoBtnCheckout.style.display = "inline-block";
+        } catch (e) {}
         showNotification(
           `Promo code applied: ${storedPromo.percent}% off`,
           "success",
@@ -80,6 +88,7 @@ async function initCheckout() {
   // Attach event listeners
   checkoutForm.addEventListener("submit", handleCheckoutSubmit);
   applyPromoBtn.addEventListener("click", handleApplyPromo);
+  if (clearPromoBtnCheckout) clearPromoBtnCheckout.addEventListener("click", handleClearPromoCheckout);
 }
 
 // ===== LOAD BUY NOW =====
@@ -172,6 +181,9 @@ function updateOrderSummary() {
   shippingEl.textContent =
     orderSummary.shipping === 0 ? "FREE" : formatPrice(orderSummary.shipping);
   totalEl.textContent = formatPrice(Math.max(orderSummary.total, 0));
+  try {
+    if (saveEl) saveEl.textContent = formatPrice(orderSummary.discount || 0);
+  } catch (err) {}
 }
 
 // ===== PREFILL FORM WITH USER DATA =====
@@ -278,17 +290,47 @@ function handleApplyPromo() {
   if (percent > 0) {
     const discountAmount = orderSummary.subtotal * (percent / 100);
     orderSummary.discount = discountAmount;
+    // persist promo with saved amount so cart and checkout stay in sync
+    try {
+      storage.set("promo", { code, percent, saved: discountAmount });
+    } catch (err) {
+      // ignore
+    }
 
     showNotification(
       `Promo code applied! You saved ${formatPrice(discountAmount)}`,
       "success",
     );
     updateOrderSummary();
-    promoInput.value = "";
-    promoInput.disabled = true;
+    try {
+      if (saveEl) saveEl.textContent = formatPrice(discountAmount);
+      if (clearPromoBtnCheckout)
+        clearPromoBtnCheckout.style.display = "inline-block";
+    } catch (e) {}
+    if (promoInput) {
+      promoInput.value = "";
+      promoInput.disabled = true;
+    }
   } else {
     showNotification("Invalid promo code", "error");
   }
+}
+
+function handleClearPromoCheckout() {
+  try {
+    storage.remove("promo");
+  } catch (err) {}
+  orderSummary.discount = 0;
+  updateOrderSummary();
+  try {
+    if (saveEl) saveEl.textContent = formatPrice(0);
+    if (promoInput) {
+      promoInput.disabled = false;
+      promoInput.value = "";
+    }
+    if (clearPromoBtnCheckout) clearPromoBtnCheckout.style.display = "none";
+  } catch (err) {}
+  showNotification("Promo removed", "success");
 }
 
 // ===== UTILITY FUNCTIONS =====
