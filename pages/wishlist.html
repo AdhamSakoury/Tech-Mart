@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/theme-init.js"></script>
+    <title>Wishlist - Tech-Mart</title>
+    <link rel="shortcut icon" href="/assets/images/logo/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/pages/wishlist.css" />
+  </head>
+  <body data-page="wishlist">
+    <div id="header"></div>
+    <main class="wishlist-page">
+      <div class="wishlist-container">
+        <header class="wishlist-header">
+          <h1>My Wishlist</h1>
+          <p><span id="wishlist-count">0</span> saved products</p>
+        </header>
+        <div id="wishlist-items" class="wishlist-grid"></div>
+        <div id="wishlist-empty" class="wishlist-empty hidden">
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <h2>Your wishlist is empty</h2>
+          <p>Save products you love and find them here anytime.</p>
+          <a class="btn btn-primary" href="/pages/product.html">Browse Products</a>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

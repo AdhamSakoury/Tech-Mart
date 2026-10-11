@@ -58,6 +58,11 @@ const loadPageModule = async (pageName) => {
         if (productPage.init) await productPage.init();
         break;
 
+      case "wishlist":
+        const wishlistPage = await import("./pages/wishlist.js");
+        if (wishlistPage.init) await wishlistPage.init();
+        break;
+
       // case "product-detail":
       //   const { initProductDetailPage } =
       //     await import("./pages/productDetail.js");

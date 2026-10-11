@@ -1,4 +1,9 @@
 import * as productService from "../services/productService.js";
+import {
+  addToWishlist,
+  getWishlist,
+  removeFromWishlist,
+} from "../services/userService.js";
 // const subcategoriesContainer = document.querySelector(".categories-links");
 
 let categoriesContainers;
@@ -332,6 +337,9 @@ function createProductCard(product, className) {
   src="${imagePath}"
   alt="${product.name}"
   onerror="this.src='placeholder.png'">
+  <button class="product-card__wishlist" data-product-id="${product.id}" type="button" aria-label="Add to wishlist" aria-pressed="false">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+  </button>
   </div>
   <div class="product-card__reviews">(${product.reviewCount})</div>
   <h3 class="product-card__title">${product.name}</h3>
@@ -357,10 +365,44 @@ function createProductCard(product, className) {
   </div>
   `;
 
+  const wishlistButton = card.querySelector(".product-card__wishlist");
+  const isWishlisted = getWishlist().some(
+    (id) => String(id) === String(product.id),
+  );
+  updateWishlistButton(wishlistButton, isWishlisted);
+  wishlistButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const currentlyWishlisted = getWishlist().some(
+      (id) => String(id) === String(product.id),
+    );
+    const result = currentlyWishlisted
+      ? removeFromWishlist(product.id)
+      : addToWishlist(product.id);
+    if (!result.success) {
+      console.error("Could not update wishlist:", result.message);
+      return;
+    }
+    const nextState = !currentlyWishlisted;
+    document
+      .querySelectorAll(".product-card__wishlist")
+      .forEach((button) => {
+        if (button.dataset.productId === String(product.id)) {
+          updateWishlistButton(button, nextState);
+        }
+      });
+  });
+
   card.addEventListener("click", () => {
     window.location.href = `${BASE_URL}/pages/single-product.html?productId=${product.id}`;
   });
   return card;
+}
+
+function updateWishlistButton(button, isWishlisted) {
+  button.setAttribute("aria-pressed", String(isWishlisted));
+  button.setAttribute("aria-label", isWishlisted ? "Remove from wishlist" : "Add to wishlist");
+  button.classList.toggle("is-wishlisted", isWishlisted);
+  button.innerHTML = `<i class="${isWishlisted ? "fa-solid" : "fa-regular"} fa-heart" aria-hidden="true"></i>`;
 }
 
 function setupFilter(products) {

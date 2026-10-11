@@ -13,6 +13,7 @@
 @import url('./components/buttons.css');
 
 @import url('./components/forms.css');
+@import url("./components/cards.css");
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   body {

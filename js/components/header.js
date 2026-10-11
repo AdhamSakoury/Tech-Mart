@@ -4,6 +4,7 @@ import { getCartItemCount, getCartSubtotal } from "../services/cartService.js";
 import {
   isAuthenticated,
   getCurrentUser,
+  getWishlist,
   logout,
 } from "../services/userService.js";
 
@@ -66,6 +67,9 @@ export const initHeader = async () => {
 
   //Load cart badge
   await updateCartBadge();
+  updateWishlistBadge();
+  window.addEventListener("wishlist:change", updateWishlistBadge);
+  window.addEventListener("storage", updateWishlistBadge);
 
   //Load user
   await updateUser();
@@ -167,6 +171,19 @@ export async function updateCartBadge() {
 
   //Load cart total amount
   carttotalAmount.textContent = formatPrice(await getCartSubtotal());
+}
+
+export function updateWishlistBadge() {
+  const badge = document.querySelector(".wishlist-badge");
+  if (!badge) return;
+
+  const count = getWishlist().length;
+  badge.textContent = count > 99 ? "99+" : String(count);
+  badge.classList.toggle("hidden", count === 0);
+  badge.setAttribute(
+    "aria-label",
+    `${count} ${count === 1 ? "item" : "items"} in wishlist`,
+  );
 }
 
 export async function updateUser() {

@@ -4,6 +4,12 @@ import * as storage from "../core/storage.js";
 const USER_KEY = APP_CONFIG.storageKeys.user; // Array of all registered users
 const SESSION_KEY = APP_CONFIG.storageKeys.session; // Logged-in session
 
+const notifyWishlistChange = () => {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new Event("wishlist:change"));
+  }
+};
+
 // let usersCache = null;
 
 // Fetch users from JSON file
@@ -209,17 +215,11 @@ export const register = async (userData) => {
 export const addToWishlist = (productId) => {
   try {
     const currentUser = getCurrentUser();
-    if (!currentUser) {
-      return {
-        success: false,
-        message: "Please login to add to wishlist",
-      };
-    }
-
-    const wishlist = currentUser.wishlist || [];
+    const wishlist = currentUser?.wishlist || storage.get(APP_CONFIG.storageKeys.wishlist) || [];
+    const normalizedProductId = String(productId);
 
     // Check if already in wishlist
-    if (wishlist.includes(productId)) {
+    if (wishlist.some((id) => String(id) === normalizedProductId)) {
       return {
         success: false,
         message: "Item already in wishlist",
@@ -227,9 +227,20 @@ export const addToWishlist = (productId) => {
     }
 
     // Add to wishlist
-    const updatedWishlist = [...wishlist, productId];
+    const updatedWishlist = [...wishlist, normalizedProductId];
 
-    return updateProfile({ wishlist: updatedWishlist });
+    if (currentUser) {
+      const result = updateProfile({ wishlist: updatedWishlist });
+      if (result.success) notifyWishlistChange();
+      return result;
+    }
+
+    const saved = storage.set(APP_CONFIG.storageKeys.wishlist, updatedWishlist);
+    if (saved) notifyWishlistChange();
+    return {
+      success: saved,
+      message: saved ? "Item added to wishlist" : "Could not save wishlist",
+    };
   } catch (error) {
     console.error("Error adding to wishlist:", error);
     return {
@@ -243,17 +254,22 @@ export const addToWishlist = (productId) => {
 export const removeFromWishlist = (productId) => {
   try {
     const currentUser = getCurrentUser();
-    if (!currentUser) {
-      return {
-        success: false,
-        message: "Please login first",
-      };
+    const wishlist = currentUser?.wishlist || storage.get(APP_CONFIG.storageKeys.wishlist) || [];
+    const normalizedProductId = String(productId);
+    const updatedWishlist = wishlist.filter((id) => String(id) !== normalizedProductId);
+
+    if (currentUser) {
+      const result = updateProfile({ wishlist: updatedWishlist });
+      if (result.success) notifyWishlistChange();
+      return result;
     }
 
-    const wishlist = currentUser.wishlist || [];
-    const updatedWishlist = wishlist.filter((id) => id !== productId);
-
-    return updateProfile({ wishlist: updatedWishlist });
+    const saved = storage.set(APP_CONFIG.storageKeys.wishlist, updatedWishlist);
+    if (saved) notifyWishlistChange();
+    return {
+      success: saved,
+      message: saved ? "Item removed from wishlist" : "Could not update wishlist",
+    };
   } catch (error) {
     console.error("Error removing from wishlist:", error);
     return {
@@ -266,7 +282,8 @@ export const removeFromWishlist = (productId) => {
 // Get user wishlist
 export const getWishlist = () => {
   const currentUser = getCurrentUser();
-  return currentUser?.wishlist || [];
+  const wishlist = currentUser?.wishlist || storage.get(APP_CONFIG.storageKeys.wishlist);
+  return Array.isArray(wishlist) ? wishlist : [];
 };
 
 // Add address to user profile
@@ -522,4 +539,3 @@ export const changePassword = ({ oldPassword, newPassword }) => {
     };
   }
 };
-

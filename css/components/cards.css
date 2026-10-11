@@ -1,0 +1,27 @@
+.product-card__image-container {
+  position: relative;
+}
+
+.product-card__wishlist {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.product-card__wishlist:hover,
+.product-card__wishlist.is-wishlisted {
+  color: var(--color-discount);
+}
+
+.product-card__wishlist i {
+  font-size: 18px;
+}
