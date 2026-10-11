@@ -13,3 +13,9 @@
 @import url('./components/buttons.css');
 
 @import url('./components/forms.css');
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  body {
+    zoom: 80%;
+  }
+}
