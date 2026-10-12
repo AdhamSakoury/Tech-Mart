@@ -1,0 +1,95 @@
+:root {
+  --layout-side-gutter: 12px;
+  --layout-inner-padding: 12px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-side-gutter: 24px;
+    --layout-inner-padding: 16px;
+  }
+}
+
+@media (min-width: 1441px) {
+  :root {
+    --layout-side-gutter: 32px;
+    --layout-inner-padding: 20px;
+  }
+}
+
+html body .header-container,
+html body .footer__container,
+html body .footer__container--newsletter,
+html body .dashboard,
+html body .page,
+html body .brandnew-section,
+html body .categories-showcase,
+html body .contact-wrapper,
+html body .checkout-wrapper,
+html body .cart-page .container,
+html body .wishlist-container,
+html body .login-page,
+html body .register-page,
+html body .forgetPasword-page,
+html body .account-page,
+html body .single-product__container,
+html body .single-product__main,
+html body .single-product__freq,
+html body .single-product__reviews,
+html body .featured-section,
+html body .container__setproducts {
+  width: calc(100% - 2 * var(--layout-side-gutter));
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: var(--layout-inner-padding);
+}
+
+html body .featured-section .featured-grid {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+html body .deals-section {
+  width: calc(100% - 2 * var(--layout-side-gutter));
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+html body .deals-container {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inner-padding);
+}
+
+@media (min-width: 1441px) {
+  html body .single-product__main {
+    width: calc(100% - 64px);
+    gap: clamp(16px, 2vw, 40px);
+  }
+
+  html body .single-product__gallery {
+    flex: 0 1 35%;
+    width: auto;
+  }
+
+  html body .single-product__gallery-image--main-container {
+    width: 100%;
+    max-width: 640px;
+    height: clamp(400px, 30vw, 620px);
+  }
+
+  html body .single-product__info {
+    flex: 1 1 35%;
+    width: auto;
+    padding-inline: clamp(16px, 2vw, 40px);
+  }
+
+  html body .single-product__purchase {
+    flex: 0 1 25%;
+    width: auto;
+    padding-inline: clamp(16px, 2vw, 40px);
+  }
+}
